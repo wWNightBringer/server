@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: gateway
+  main:
+    allow-bean-definition-overriding: true
+server:
+  port: 9000
+zuul:
+  routes:
+    spring-cloud-eureka-client:
+      path: /collect/**
+      url: http://localhost:8082/spring-cloud-eureka-client/
+    spring-cloud-eureka-client-second:
+      path: /api/**
+      url: http://localhost:8081/spring-cloud-eureka-client-second/

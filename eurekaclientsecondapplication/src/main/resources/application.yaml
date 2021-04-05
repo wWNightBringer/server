@@ -1,0 +1,21 @@
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+spring:
+  application:
+    name: spring-cloud-eureka-client-second
+server:
+  port: 8081
+  http2:
+    enabled: true
+eureka:
+  client:
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
